@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- 과금없이 즐기는 연희의 RPG 대모험 © 2026 HC. All rights reserved. 무단 복제·배포 금지 -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>RPG 대모험_HC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <!-- 모바일 1차: 홈 화면에 추가했을 때 전체 화면 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="RPG 대모험">
+  <meta name="theme-color" content="#07090f">
+  <meta name="format-detection" content="telephone=no">
+  <!-- 모바일 2차-1: 앱 아이콘 A "여덟 번째 별" (docs/drafts/icons/export_icons.js 로 코드에서 뽑은 PNG) -->
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/fonts/jua.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="game">
+      <canvas id="canvas" width="1280" height="720"></canvas>
+      <div id="ui"></div>
+    </div>
+  </div>
+
+  <!-- 공용 -->
+  <script src="src/util.js"></script>
+  <script src="src/version.js"></script>
+  <script src="src/webbuild.js"></script>
+  <script src="src/core/errlog.js"></script>
+  <!-- 데이터 -->
+  <script src="src/data/formulas.js"></script>
+  <script src="src/core/settings.js"></script>
+  <script src="src/data/jobs.js"></script>
+  <script src="src/data/looks.js"></script>
+  <script src="src/data/skills.js"></script>
+  <script src="src/data/jobs2.js"></script>
+  <script src="src/data/options.js"></script>
+  <script src="src/data/items.js"></script>
+  <script src="src/data/sets.js"></script>
+  <script src="src/data/sfx.js"></script>
+  <script src="src/data/monsters.js"></script>
+  <script src="src/data/bosses.js"></script>
+  <script src="src/data/npcs.js"></script>
+  <script src="src/data/quests.js"></script>
+  <script src="src/data/maps.js"></script>
+  <script src="src/data/world2.js"></script>
+  <script src="src/data/story2.js"></script>
+  <script src="src/data/story3.js"></script>
+  <script src="src/data/rework.js"></script>
+  <script src="src/data/balance21.js"></script>
+  <script src="src/data/songs.js"></script>
+  <!-- 코어 -->
+  <script src="src/core/input.js"></script>
+  <script src="src/core/keys.js"></script>
+  <script src="src/core/touch.js"></script>
+  <script src="src/core/audio.js"></script>
+  <script src="src/core/music.js"></script>
+  <script src="src/core/sound.js"></script>
+  <script src="src/core/save.js"></script>
+  <!-- 그래픽 -->
+  <script src="src/render/icons.js"></script>
+  <script src="src/render/icons2.js"></script>
+  <script src="src/render/sprites.js"></script>
+  <script src="src/render/outfit.js"></script>
+  <script src="src/render/monsters2.js"></script>
+  <script src="src/render/monsters3.js"></script>
+  <script src="src/render/monsters4.js"></script>
+  <script src="src/render/boss21.js"></script>
+  <script src="src/render/nox.js"></script>
+  <script src="src/render/background.js"></script>
+  <!-- 시스템 -->
+  <script src="src/systems/items.js"></script>
+  <script src="src/systems/stats.js"></script>
+  <script src="src/systems/quest.js"></script>
+  <script src="src/systems/combat.js"></script>
+  <script src="src/systems/tutorial.js"></script>
+  <script src="src/systems/nav.js"></script>
+  <script src="src/systems/chapter.js"></script>
+  <script src="src/systems/storage.js"></script>
+  <!-- 엔티티 -->
+  <script src="src/entity/fx.js"></script>
+  <script src="src/entity/projectile.js"></script>
+  <script src="src/entity/drop.js"></script>
+  <script src="src/entity/boss.js"></script>
+  <script src="src/entity/monster.js"></script>
+  <script src="src/systems/monskill.js"></script>
+  <script src="src/systems/skillx.js"></script>
+  <script src="src/systems/assist.js"></script>
+  <script src="src/systems/hidden.js"></script>
+  <script src="src/entity/player.js"></script>
+  <script src="src/world.js"></script>
+  <!-- UI -->
+  <script src="src/ui/ui.js"></script>
+  <script src="src/ui/hud.js"></script>
+  <script src="src/ui/windows.js"></script>
+  <script src="src/ui/windows2.js"></script>
+  <script src="src/ui/windows3.js"></script>
+  <script src="src/ui/dialog.js"></script>
+  <script src="src/ui/mapwin.js"></script>
+  <script src="src/ui/creator.js"></script>
+  <script src="src/ui/ending.js"></script>
+  <script src="src/ui/cutscene.js"></script>
+  <script src="src/ui/titlebg.js"></script>
+  <script src="src/ui/autopot.js"></script>
+  <script src="src/ui/bugreport.js"></script>
+  <script src="src/ui/mobile.js"></script>
+  <script src="src/ui/play.js"></script>
+  <!-- 시작 -->
+  <script src="src/main.js"></script>
+</body>
+</html>
