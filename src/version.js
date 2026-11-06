@@ -1,2 +1,2 @@
 /*! 과금없이 즐기는 연희의 RPG 대모험 © 2026 HC. All rights reserved. 무단 복제·배포 금지 */
-"use strict";G.VERSION="2.1.5",Object.defineProperty(G,"IS_DEV",{get(){const e=window.electronAPI;return e&&e.info?!!e.info.dev:!!G.Dev}}),window.electronAPI&&window.electronAPI.info&&window.electronAPI.info.version&&(G.VERSION=window.electronAPI.info.version);
+"use strict";G.VERSION="2.1.6",Object.defineProperty(G,"IS_DEV",{get(){const e=window.electronAPI;return e&&e.info?!!e.info.dev:!!G.Dev}}),window.electronAPI&&window.electronAPI.info&&window.electronAPI.info.version&&(G.VERSION=window.electronAPI.info.version);
