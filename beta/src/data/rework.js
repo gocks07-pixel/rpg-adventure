@@ -1,0 +1,2 @@
+/*! 과금없이 즐기는 연희의 RPG 대모험 © 2026 HC. All rights reserved. 무단 복제·배포 금지 */
+"use strict";!function(){const o={scroll_70:2,scroll_30:3};for(const s of Object.values(G.QUESTS)){const t={};for(const[c,e]of s.items){if("flame"===c){s.gold=(s.gold||0)+1500*e;continue}const l=o[c]?"scroll_100":c;t[l]=(t[l]||0)+e*(o[c]||1)}s.items=Object.entries(t)}}();
