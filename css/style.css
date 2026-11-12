@@ -57,6 +57,11 @@ body { font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', san
 #tracker { position: absolute; right: 14px; top: 48px; width: 250px; display: flex; flex-direction: column; gap: 6px; }
 #tracker .tq { background: #0d1120b3; border: 1px solid #2f3854; border-radius: 6px; padding: 6px 9px; font-size: 12px; }
 #tracker .tq b { display: block; font-size: 12px; }
+/* 빌드 2 (9-2): 퀘스트 알림 ✕ (숨기기 · 포기). 글자는 작게, 누르는 곳은 넓게 */
+#tracker .tq .tqh b { display: inline; }
+#tracker .tq .tqx { position: relative; display: inline-block; margin-left: 7px; color: #ff9a9a; font-size: 0.8em; font-weight: 900; line-height: 1; vertical-align: middle; cursor: pointer; pointer-events: auto; touch-action: manipulation; text-shadow: 0 0 2px #000; }
+#tracker .tq .tqx::after { content: ''; position: absolute; inset: -9px -8px; }
+#tracker .tq .tqx:hover { color: #ffd0d0; }
 #tracker .tq .main { color: #ffcf4a; }
 #tracker .tq .sub { color: #7fc8ff; }
 #tracker .tq .ok { color: #7dff9a; }
@@ -284,6 +289,10 @@ body { font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', san
 #askov { position: absolute; inset: 0; z-index: 60; pointer-events: none; }
 #askov:empty { display: none; }
 #askov .ask-bg { pointer-events: auto; }
+#askov .qch { max-width: 460px; }
+#askov .qch .btn { display: block; width: 100%; margin: 6px 0 0; }
+#askov .qch .btn.bad { background: #5a2030; border-color: #ff9a9a; }
+#askov .qch .note { font-size: 11px; color: #c8c0e0; margin-top: 8px; line-height: 1.45; }
 
 /* ---------- 1.5: 창고 / 순간이동 ---------- */
 .grid.sto { grid-template-columns: repeat(6, 42px); }
@@ -339,3 +348,51 @@ body { font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', san
 .bug-ok { margin-top: 10px; font-size: 13px; line-height: 1.6; color: #9affc0; }
 .bug-bt { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
 .bug-bt .btn { min-width: 0; margin: 0; }
+
+/* 빌드 3 (11): 대상 고르기 띠 (인벤 창 맨 위) */
+.tgtline { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 5px 6px 5px 10px; background: rgba(60,20,90,.95); border: 1.5px solid #d9b0ff; border-radius: 9px; color: #f0e0ff; font-size: 12.5px; font-weight: 700; }
+.tgtline b { color: #ffe08a; }
+.tgtline .btn { margin-left: auto; background: #5a2030; border-color: #ff9a9a; padding: 3px 12px; }
+/* 빌드 3 (19): 각성 직업 카드 */
+#askov .ask.jobp { max-width: 920px; width: 92%; text-align: left; }
+#askov .jobp h3 { margin: 0 0 4px; color: #ffe08a; font-size: 17px; }
+#askov .jobp .jcards { display: flex; gap: 10px; margin-top: 8px; }
+#askov .jobp .job-card { flex: 1; background: #161c33; border: 1px solid #3a4466; border-radius: 10px; padding: 10px 12px; }
+#askov .jobp .job-card.mine { border-color: #ffd54a; }
+#askov .jobp .jc-h { font-size: 15px; margin-bottom: 4px; }
+#askov .jobp .jc-l { font-size: 12.5px; line-height: 1.55; }
+#askov .jobp .jc-b { margin-top: 8px; text-align: center; }
+#askov .jobp .jc-b .btn { padding: 6px 16px; }
+#askov .jobp .jc-st { color: #9aa6c8; font-size: 12px; }
+#askov .jobp .end { text-align: right; margin-top: 10px; }
+
+/* 빌드 4 (13): 스킬 추천 배치 */
+.rec-btns { display: flex; gap: 6px; margin: 0 0 8px; }
+#askov .jobp .rec-h { font-weight: 800; margin: 8px 0 2px; }
+#askov .jobp .rec-slots { display: flex; gap: 8px; margin: 2px 0 6px; }
+#askov .jobp .rs { width: 88px; text-align: center; font-size: 11.5px; line-height: 1.3; }
+#askov .jobp .rs img, #askov .jobp .rs .rs-e { display: block; width: 42px; height: 42px; margin: 0 auto 3px; border-radius: 9px; border: 1px solid #6b7aa8; background: #0b0e18; }
+
+/* 빌드 4 (14): 여러 개 판매 · 장비 일괄 판매 */
+.sellbar { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding: 5px 6px; border-radius: 8px; background: #122a1c; border: 1px solid #3f8a5a; font-size: 12px; flex-wrap: wrap; }
+.sellbar .sb-n { flex: 1; min-width: 60px; }
+.sellbar .sb-n b { color: #ffd54a; }
+.cell.msel-on { outline: 2px solid #8ff0b0; outline-offset: -2px; position: relative; }
+.cell .msel-ck { position: absolute; right: 1px; top: 1px; width: 14px; height: 14px; border-radius: 4px; background: #1f7a3e; border: 1.5px solid #8ff0b0; color: #fff; font: 900 10px/12px sans-serif; text-align: center; z-index: 3; }
+.cell[data-act="msel"] { cursor: pointer; }
+.bulk-list { max-height: 360px; overflow-y: auto; }
+.bulk-row { display: flex; align-items: center; gap: 8px; padding: 4px 6px; border-bottom: 1px solid #283050; font-size: 12px; cursor: pointer; color: #8d97b5; }
+.bulk-row.on { color: #e8ecf6; }
+.bulk-row img { width: 24px; height: 24px; }
+.bulk-row .bk { width: 16px; font-size: 14px; }
+.bulk-row .bn { flex: 1.3; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bulk-row:not(.on) .bn { opacity: .6; }
+.bulk-row .bw { flex: 1.2; font-size: 11px; }
+.bulk-row .bp { width: 70px; text-align: right; color: #ffd54a; }
+
+/* 빌드 5 (15) */
+.redo-note { margin-top: 10px; font-size: 11.5px; color: #b8b0d8; }
+
+/* 스킬 창: 각성별 기술 포인트 줄 */
+.sp-pools { margin: -6px 0 8px; padding: 0 2px; font-size: 11px; color: #8d97b5; }
+.sp-pools b { color: #ffe08a; }
